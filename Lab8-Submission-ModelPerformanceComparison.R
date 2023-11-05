@@ -53,3 +53,8 @@ splom(results)
 ## 5. Pairwise xyPlots ----
 xyplot(results, models = c("LDA", "SVM"))
 xyplot(results, models = c("SVM", "CART"))
+
+## 6. Statistical Significance Tests ----
+diffs <- diff(results)
+
+summary(diffs)
