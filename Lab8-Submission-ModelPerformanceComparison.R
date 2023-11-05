@@ -20,4 +20,7 @@ iris_model_lda <- train(Species ~ ., data = iris,
 set.seed(7)
 iris_model_cart <- train(Species ~ ., data = iris,
                          method = "rpart", trControl = train_control)
-
+### KNN ----
+set.seed(7)
+iris_model_knn <- train(Species ~ ., data = iris,
+                        method = "knn", trControl = train_control)
