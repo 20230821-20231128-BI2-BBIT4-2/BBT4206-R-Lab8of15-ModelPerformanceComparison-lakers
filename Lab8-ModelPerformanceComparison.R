@@ -216,6 +216,7 @@ bwplot(results, scales = scales)
 # They show both the mean estimated accuracy as well as the 95% confidence
 # interval (e.g. the range in which 95% of observed scores fell).
 
+
 scales <- list(x = list(relation = "free"), y = list(relation = "free"))
 dotplot(results, scales = scales)
 
