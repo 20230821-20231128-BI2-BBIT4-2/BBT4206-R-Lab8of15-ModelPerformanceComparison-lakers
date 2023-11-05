@@ -36,3 +36,6 @@ iris_model_rf <- train(Species ~ ., data = iris,
 results <- resamples(list(LDA = iris_model_lda, CART = iris_model_cart,
                           KNN = iris_model_knn, SVM = iris_model_svm,
                           RF = iris_model_rf))
+
+## 1. Table Summary ----
+summary(results)
