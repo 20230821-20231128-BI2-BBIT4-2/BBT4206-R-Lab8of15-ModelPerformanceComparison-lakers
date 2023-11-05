@@ -49,3 +49,7 @@ dotplot(results, scales = scales)
 
 ## 4. Scatter Plot Matrix ----
 splom(results)
+
+## 5. Pairwise xyPlots ----
+xyplot(results, models = c("LDA", "SVM"))
+xyplot(results, models = c("SVM", "CART"))
