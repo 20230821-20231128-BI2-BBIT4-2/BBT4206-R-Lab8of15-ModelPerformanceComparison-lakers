@@ -16,5 +16,8 @@ train_control <- trainControl(method = "repeatedcv", number = 10, repeats = 3)
 set.seed(7)
 iris_model_lda <- train(Species ~ ., data = iris,
                         method = "lda", trControl = train_control)
-
+### CART ----
+set.seed(7)
+iris_model_cart <- train(Species ~ ., data = iris,
+                         method = "rpart", trControl = train_control)
 
