@@ -39,3 +39,13 @@ results <- resamples(list(LDA = iris_model_lda, CART = iris_model_cart,
 
 ## 1. Table Summary ----
 summary(results)
+
+## 2. Box and Whisker Plot ----
+scales <- list(x = list(relation = "free"), y = list(relation = "free"))
+bwplot(results, scales = scales)
+
+## 3. Dot Plots ----
+dotplot(results, scales = scales)
+
+## 4. Scatter Plot Matrix ----
+splom(results)
