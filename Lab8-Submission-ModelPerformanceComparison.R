@@ -24,3 +24,11 @@ iris_model_cart <- train(Species ~ ., data = iris,
 set.seed(7)
 iris_model_knn <- train(Species ~ ., data = iris,
                         method = "knn", trControl = train_control)
+### SVM ----
+set.seed(7)
+iris_model_svm <- train(Species ~ ., data = iris,
+                        method = "svmRadial", trControl = train_control)
+### Random Forest ----
+set.seed(7)
+iris_model_rf <- train(Species ~ ., data = iris,
+                       method = "rf", trControl = train_control)
