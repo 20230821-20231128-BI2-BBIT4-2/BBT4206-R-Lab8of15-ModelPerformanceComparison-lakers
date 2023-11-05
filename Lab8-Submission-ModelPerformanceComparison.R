@@ -32,3 +32,7 @@ iris_model_svm <- train(Species ~ ., data = iris,
 set.seed(7)
 iris_model_rf <- train(Species ~ ., data = iris,
                        method = "rf", trControl = train_control)
+## Call the `resamples` Function ----
+results <- resamples(list(LDA = iris_model_lda, CART = iris_model_cart,
+                          KNN = iris_model_knn, SVM = iris_model_svm,
+                          RF = iris_model_rf))
