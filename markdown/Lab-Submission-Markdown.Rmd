@@ -1,7 +1,7 @@
 ---
-title: "Business Intelligence Lab Submission Markdown"
-author: "<Lakers>"
-date: "<06-11-2023>"
+title: "Business Intelligence Project"
+author: "Lakers"
+date: "6th November 2023"
 output:
   github_document: 
     toc: yes
@@ -12,7 +12,6 @@ output:
 editor_options:
   chunk_output_type: console
 ---
-
 # Student Details
 
 +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -41,8 +40,8 @@ editor_options:
 
 
 
-
 # Setup Chunk
+
 
 **Note:** the following KnitR options have been set as the global defaults: <BR> `knitr::opts_chunk$set(echo = TRUE, warning = FALSE, eval = TRUE, collapse = FALSE, tidy = TRUE)`.
 
@@ -56,93 +55,46 @@ knitr::opts_chunk$set(
 )
 ```
 # STEP 1. Install and Load the Required Packages ----
-## arules ----
-if (require("arules")) {
-  require("arules")
+#Load the language server first
+```{r}
+
+if (require("languageserver")) {
+  require("languageserver")
 } else {
-  install.packages("arules", dependencies = TRUE,
+  install.packages("languageserver", dependencies = TRUE,
+                   repos = "https://cloud.r-project.org")
+}
+## mlbench ----
+if (require("mlbench")) {
+  require("mlbench")
+} else {
+  install.packages("mlbench", dependencies = TRUE,
+                   repos = "https://cloud.r-project.org")
+}
+## caret ----
+if (require("caret")) {
+  require("caret")
+} else {
+  install.packages("caret", dependencies = TRUE,
                    repos = "https://cloud.r-project.org")
 }
 
-## arulesViz ----
-if (require("arulesViz")) {
-  require("arulesViz")
+## kernlab ----
+if (require("kernlab")) {
+  require("kernlab")
 } else {
-  install.packages("arulesViz", dependencies = TRUE,
+  install.packages("kernlab", dependencies = TRUE,
                    repos = "https://cloud.r-project.org")
 }
 
-## tidyverse ----
-if (require("tidyverse")) {
-  require("tidyverse")
+## randomForest ----
+if (require("randomForest")) {
+  require("randomForest")
 } else {
-  install.packages("tidyverse", dependencies = TRUE,
+  install.packages("randomForest", dependencies = TRUE,
                    repos = "https://cloud.r-project.org")
 }
-
-## readxl ----
-if (require("readxl")) {
-  require("readxl")
-} else {
-  install.packages("readxl", dependencies = TRUE,
-                   repos = "https://cloud.r-project.org")
-}
-
-## knitr ----
-if (require("knitr")) {
-  require("knitr")
-} else {
-  install.packages("knitr", dependencies = TRUE,
-                   repos = "https://cloud.r-project.org")
-}
-
-## ggplot2 ----
-if (require("ggplot2")) {
-  require("ggplot2")
-} else {
-  install.packages("ggplot2", dependencies = TRUE,
-                   repos = "https://cloud.r-project.org")
-}
-
-## lubridate ----
-if (require("lubridate")) {
-  require("lubridate")
-} else {
-  install.packages("lubridate", dependencies = TRUE,
-                   repos = "https://cloud.r-project.org")
-}
-
-## plyr ----
-if (require("plyr")) {
-  require("plyr")
-} else {
-  install.packages("plyr", dependencies = TRUE,
-                   repos = "https://cloud.r-project.org")
-}
-
-## dplyr ----
-if (require("dplyr")) {
-  require("dplyr")
-} else {
-  install.packages("dplyr", dependencies = TRUE,
-                   repos = "https://cloud.r-project.org")
-}
-
-## naniar ----
-if (require("naniar")) {
-  require("naniar")
-} else {
-  install.packages("naniar", dependencies = TRUE,
-                   repos = "https://cloud.r-project.org")
-}
-
-## RColorBrewer ----
-if (require("RColorBrewer")) {
-  require("RColorBrewer")
-} else {
-  install.packages("RColorBrewer", dependencies = TRUE,
-                   repos = "https://cloud.r-project.org")
-}
+```
 # Load necessary libraries
 library(caret)
 library(e1071)

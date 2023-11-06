@@ -1,23 +1,13 @@
-Business Intelligence Lab Submission Markdown
+Business Intelligence Project
 ================
-<Lakers>
-\<06-11-2023\>
+Lakers
+6th November 2023
 
 - [Student Details](#student-details)
 - [Setup Chunk](#setup-chunk)
 - [STEP 1. Install and Load the Required Packages
   —-](#step-1-install-and-load-the-required-packages--)
-  - [arules —-](#arules--)
-  - [arulesViz —-](#arulesviz--)
-  - [tidyverse —-](#tidyverse--)
-  - [readxl —-](#readxl--)
-  - [knitr —-](#knitr--)
-  - [ggplot2 —-](#ggplot2--)
-  - [lubridate —-](#lubridate--)
-  - [plyr —-](#plyr--)
-  - [dplyr —-](#dplyr--)
-  - [naniar —-](#naniar--)
-  - [RColorBrewer —-](#rcolorbrewer--)
+- [Load necessary libraries](#load-necessary-libraries)
 - [Load the Iris dataset (this dataset is included in
   R)](#load-the-iris-dataset-this-dataset-is-included-in-r)
   - [LDA —-](#lda--)
@@ -52,70 +42,91 @@ here <https://yihui.org/knitr/options/>.
 
 # STEP 1. Install and Load the Required Packages —-
 
-## arules —-
+\#Load the language server first
 
-if (require(“arules”)) { require(“arules”) } else {
-install.packages(“arules”, dependencies = TRUE, repos =
-“<https://cloud.r-project.org>”) }
+``` r
+if (require("languageserver")) {
+  require("languageserver")
+} else {
+  install.packages("languageserver", dependencies = TRUE,
+                   repos = "https://cloud.r-project.org")
+}
+```
 
-## arulesViz —-
+    ## Loading required package: languageserver
 
-if (require(“arulesViz”)) { require(“arulesViz”) } else {
-install.packages(“arulesViz”, dependencies = TRUE, repos =
-“<https://cloud.r-project.org>”) }
+``` r
+## mlbench ----
+if (require("mlbench")) {
+  require("mlbench")
+} else {
+  install.packages("mlbench", dependencies = TRUE,
+                   repos = "https://cloud.r-project.org")
+}
+```
 
-## tidyverse —-
+    ## Loading required package: mlbench
 
-if (require(“tidyverse”)) { require(“tidyverse”) } else {
-install.packages(“tidyverse”, dependencies = TRUE, repos =
-“<https://cloud.r-project.org>”) }
+``` r
+## caret ----
+if (require("caret")) {
+  require("caret")
+} else {
+  install.packages("caret", dependencies = TRUE,
+                   repos = "https://cloud.r-project.org")
+}
+```
 
-## readxl —-
+    ## Loading required package: caret
 
-if (require(“readxl”)) { require(“readxl”) } else {
-install.packages(“readxl”, dependencies = TRUE, repos =
-“<https://cloud.r-project.org>”) }
+    ## Loading required package: ggplot2
 
-## knitr —-
+    ## Loading required package: lattice
 
-if (require(“knitr”)) { require(“knitr”) } else {
-install.packages(“knitr”, dependencies = TRUE, repos =
-“<https://cloud.r-project.org>”) }
+``` r
+## kernlab ----
+if (require("kernlab")) {
+  require("kernlab")
+} else {
+  install.packages("kernlab", dependencies = TRUE,
+                   repos = "https://cloud.r-project.org")
+}
+```
 
-## ggplot2 —-
+    ## Loading required package: kernlab
 
-if (require(“ggplot2”)) { require(“ggplot2”) } else {
-install.packages(“ggplot2”, dependencies = TRUE, repos =
-“<https://cloud.r-project.org>”) }
+    ## 
+    ## Attaching package: 'kernlab'
 
-## lubridate —-
+    ## The following object is masked from 'package:ggplot2':
+    ## 
+    ##     alpha
 
-if (require(“lubridate”)) { require(“lubridate”) } else {
-install.packages(“lubridate”, dependencies = TRUE, repos =
-“<https://cloud.r-project.org>”) }
+``` r
+## randomForest ----
+if (require("randomForest")) {
+  require("randomForest")
+} else {
+  install.packages("randomForest", dependencies = TRUE,
+                   repos = "https://cloud.r-project.org")
+}
+```
 
-## plyr —-
+    ## Loading required package: randomForest
 
-if (require(“plyr”)) { require(“plyr”) } else { install.packages(“plyr”,
-dependencies = TRUE, repos = “<https://cloud.r-project.org>”) }
+    ## randomForest 4.7-1.1
 
-## dplyr —-
+    ## Type rfNews() to see new features/changes/bug fixes.
 
-if (require(“dplyr”)) { require(“dplyr”) } else {
-install.packages(“dplyr”, dependencies = TRUE, repos =
-“<https://cloud.r-project.org>”) }
+    ## 
+    ## Attaching package: 'randomForest'
 
-## naniar —-
+    ## The following object is masked from 'package:ggplot2':
+    ## 
+    ##     margin
 
-if (require(“naniar”)) { require(“naniar”) } else {
-install.packages(“naniar”, dependencies = TRUE, repos =
-“<https://cloud.r-project.org>”) }
+# Load necessary libraries
 
-## RColorBrewer —-
-
-if (require(“RColorBrewer”)) { require(“RColorBrewer”) } else {
-install.packages(“RColorBrewer”, dependencies = TRUE, repos =
-“<https://cloud.r-project.org>”) } \# Load necessary libraries
 library(caret) library(e1071) library(randomForest) library(kernlab)
 library(rpart)
 
